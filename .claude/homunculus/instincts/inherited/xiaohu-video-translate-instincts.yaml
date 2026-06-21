@@ -1,0 +1,258 @@
+# Instincts generated from https://github.com/yuezheng2006/xiaohu-video-translate
+# Generated: 2026-06-21T00:11:37.668Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: xiaohu-video-translate-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/yuezheng2006/xiaohu-video-translate
+---
+
+# Xiaohu Video Translate Commit Length
+
+## Action
+
+Keep commit messages concise (~34 characters)
+
+## Evidence
+
+- Average commit message length: 34 chars
+- Based on 1 commits
+
+---
+id: xiaohu-video-translate-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/yuezheng2006/xiaohu-video-translate
+---
+
+# Xiaohu Video Translate Naming Files
+
+## Action
+
+Use snake_case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: snake_case
+
+---
+id: xiaohu-video-translate-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/yuezheng2006/xiaohu-video-translate
+---
+
+# Xiaohu Video Translate Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: xiaohu-video-translate-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/yuezheng2006/xiaohu-video-translate
+---
+
+# Xiaohu Video Translate Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: xiaohu-video-translate-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/yuezheng2006/xiaohu-video-translate
+---
+
+# Xiaohu Video Translate Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: xiaohu-video-translate-instinct-file-naming
+trigger: "When creating a new file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: yuezheng2006/xiaohu-video-translate
+---
+
+# Xiaohu Video Translate Instinct File Naming
+
+## Action
+
+Name the file using snake_case
+
+## Evidence
+
+- Pattern in files: skills/, tests/
+
+---
+id: xiaohu-video-translate-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: yuezheng2006/xiaohu-video-translate
+---
+
+# Xiaohu Video Translate Instinct Function Naming
+
+## Action
+
+Use camelCase for function names
+
+## Evidence
+
+- Pattern in code: functions in skills/
+
+---
+id: xiaohu-video-translate-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: yuezheng2006/xiaohu-video-translate
+---
+
+# Xiaohu Video Translate Instinct Class Naming
+
+## Action
+
+Use PascalCase for class names
+
+## Evidence
+
+- Pattern in code: classes in skills/
+
+---
+id: xiaohu-video-translate-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: yuezheng2006/xiaohu-video-translate
+---
+
+# Xiaohu Video Translate Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for constant names
+
+## Evidence
+
+- Pattern in code: constants in skills/
+
+---
+id: xiaohu-video-translate-instinct-import-style
+trigger: "When importing modules"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: yuezheng2006/xiaohu-video-translate
+---
+
+# Xiaohu Video Translate Instinct Import Style
+
+## Action
+
+Use relative imports
+
+## Evidence
+
+- Pattern in code: imports in skills/
+
+---
+id: xiaohu-video-translate-instinct-export-style
+trigger: "When exporting functions or classes"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: yuezheng2006/xiaohu-video-translate
+---
+
+# Xiaohu Video Translate Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in code: exports in skills/
+
+---
+id: xiaohu-video-translate-instinct-test-location
+trigger: "When adding new tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: yuezheng2006/xiaohu-video-translate
+---
+
+# Xiaohu Video Translate Instinct Test Location
+
+## Action
+
+Place test files in the separate tests/ folder
+
+## Evidence
+
+- Pattern in folder structure: tests/
+
+---
+id: xiaohu-video-translate-instinct-commit-format
+trigger: "When writing a commit message"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: yuezheng2006/xiaohu-video-translate
+---
+
+# Xiaohu Video Translate Instinct Commit Format
+
+## Action
+
+Write a concise, freeform message without a prefix, averaging around 34 characters
+
+## Evidence
+
+- Seen in commit: 'Harden skill runtime configuration'
+
