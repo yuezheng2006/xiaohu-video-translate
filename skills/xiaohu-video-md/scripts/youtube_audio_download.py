@@ -22,13 +22,23 @@ SKILL_DIR = Path(__file__).resolve().parents[1]
 
 def _load_output_root(outdir: str | None) -> Path:
     if outdir:
-        root = Path(os.path.expanduser(outdir)).resolve()
+        raw = str(outdir).strip()
     else:
-        cfg = json.load(open(SKILL_DIR / "config.json", "r", encoding="utf-8"))
-        root = Path(os.path.expanduser(str(cfg.get("output_dir", "")).strip())).resolve()
+        cfg_path = SKILL_DIR / "config.json"
+        try:
+            cfg = json.load(open(cfg_path, "r", encoding="utf-8"))
+        except FileNotFoundError:
+            raise SystemExit("缺少 config.json，请先从 config.example.json 复制并填写 output_dir")
+        raw = str(cfg.get("output_dir", "")).strip()
 
+    if not raw:
+        raise SystemExit("output_dir 不能为空，请填写绝对路径或以 ~ 开头的路径")
+    root = Path(os.path.expanduser(raw))
     if not root.is_absolute():
         raise SystemExit("output_dir 必须是绝对路径或以 ~ 开头")
+    root = root.resolve()
+    if root.exists() and root.is_file():
+        raise SystemExit("output_dir 不能指向已有文件")
 
     (root / "tmp").mkdir(parents=True, exist_ok=True)
     (root / "data").mkdir(parents=True, exist_ok=True)
@@ -89,4 +99,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

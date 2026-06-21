@@ -1,0 +1,9 @@
+# Core download and media-processing Python dependencies.
+# System tools are still required separately: ffmpeg and, on macOS, Homebrew.
+yt-dlp>=2025.6.9
+patchright>=1.52.0
+
+# Whisper engines: install at least one. mlx-whisper is preferred on Apple Silicon;
+# faster-whisper is the cross-platform CPU fallback.
+mlx-whisper>=0.4.3; platform_system == "Darwin"
+faster-whisper>=1.1.1

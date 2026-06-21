@@ -86,6 +86,8 @@ brew install yt-dlp ffmpeg
 pip3 install --break-system-packages mlx-whisper
 # 非 Apple Silicon 的 Mac 用兜底引擎：
 # pip3 install --break-system-packages faster-whisper
+# 也可以用仓库依赖清单安装 Python 依赖：
+# pip3 install --break-system-packages -r requirements.txt
 
 # 3. 装技能
 git clone https://github.com/xiaohuailabs/xiaohu-video-translate.git
@@ -127,6 +129,14 @@ cd xiaohu-video-translate && bash install.sh
 跟 Windows 的 WSL 步骤一致：`apt install ffmpeg` + `pip install yt-dlp faster-whisper`，烧字幕时把字体换成系统自带的中文字体（如 Noto Sans CJK）。
 
 > 想让烧字幕在 Windows / Linux 上**自动选对字体、开箱即用**？欢迎提 issue，这块正在做跨平台适配。
+
+### 开发自检
+
+仓库带了轻量 smoke tests，覆盖输出目录校验和双语 SRT → ASS 转换：
+
+```bash
+python3 -m unittest discover -s tests
+```
 
 ### 怎么用
 
@@ -218,6 +228,8 @@ The core is scripts + a `SKILL.md` per skill — **any agent that can read a ski
 ```bash
 brew install yt-dlp ffmpeg
 pip3 install --break-system-packages mlx-whisper   # or faster-whisper on non-Apple-Silicon
+# Or install Python dependencies from the repo manifest:
+# pip3 install --break-system-packages -r requirements.txt
 git clone https://github.com/xiaohuailabs/xiaohu-video-translate.git
 cd xiaohu-video-translate && bash install.sh
 ```
@@ -233,6 +245,12 @@ cd xiaohu-video-translate && bash install.sh
 Then set `output_dir` (absolute path) in `~/.claude/skills/xiaohu-video-md/config.json`. The MLX model auto-downloads on first run — no manual download needed.
 
 > `whisper-cpp` is an **optional fallback engine**; the default mlx-whisper / faster-whisper path doesn't need it. Only `brew install whisper-cpp` (and download the ggml models to `~/.cache/whisper-cpp/`) if you specifically want whisper-cli for fastest text-only transcription.
+
+### Development Smoke Tests
+
+```bash
+python3 -m unittest discover -s tests
+```
 
 ### Usage
 
