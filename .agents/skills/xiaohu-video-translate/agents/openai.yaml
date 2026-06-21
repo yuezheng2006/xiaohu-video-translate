@@ -1,0 +1,6 @@
+interface:
+  display_name: "Xiaohu Video Translate"
+  short_description: "Repo-specific patterns and workflows for xiaohu-video-translate"
+  default_prompt: "Use the xiaohu-video-translate repo skill to follow existing architecture, testing, and workflow conventions."
+policy:
+  allow_implicit_invocation: true
